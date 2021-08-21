@@ -43031,11 +43031,6 @@ modelLoader.load(_scene.default, function (gltf) {
         radar.visible = true;
         radarGroup.add(radar);
       }
-
-      if (ob.name == 'BaggageTractor') {
-        gui.add(ob.position, 'y').min(0).max(3).step(0.01);
-        ob.position.y = 0.5;
-      }
     });
   }
 
