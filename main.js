@@ -13,6 +13,8 @@ const sizes = {
     height: window.innerHeight
 }
 
+const gui = new dat.GUI()
+
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 
@@ -62,6 +64,11 @@ modelLoader.load(sceneFile,
           radar.castShadow = true
           radar.visible = true
           radarGroup.add(radar)
+        }
+
+        if (ob.name == 'BaggageTractor') {
+          gui.add(ob.position, 'y').min(0).max(3).step(0.01)
+          ob.position.y = 0.5
         }
       })
     }

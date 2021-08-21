@@ -42990,7 +42990,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var sizes = {
   width: window.innerWidth,
   height: window.innerHeight
-}; // Canvas
+};
+var gui = new dat.GUI(); // Canvas
 
 var canvas = document.querySelector('canvas.webgl'); // Scene
 
@@ -43029,6 +43030,11 @@ modelLoader.load(_scene.default, function (gltf) {
         radar.castShadow = true;
         radar.visible = true;
         radarGroup.add(radar);
+      }
+
+      if (ob.name == 'BaggageTractor') {
+        gui.add(ob.position, 'y').min(0).max(3).step(0.01);
+        ob.position.y = 0.5;
       }
     });
   }
