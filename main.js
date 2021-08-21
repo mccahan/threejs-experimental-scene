@@ -24,8 +24,8 @@ const scene = new THREE.Scene()
 // Camera
 const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 21
-camera.position.y = 9
-camera.position.z = 23
+camera.position.y = 8
+camera.position.z = -23
 scene.add(camera)
 
 const radarGroup = new THREE.Group()
